@@ -153,13 +153,44 @@ Business-driven queries covering discounts, stock gaps, revenue, value-for-money
 
 ## 💡 Key Insights
 
-> Add your own findings here after running the queries, for example:
+### 🔍 Data Exploration & Cleaning
+- The dataset has **3,732 products** across **14 categories**, with **no NULL values**.
+- **453 products (≈12.1%)** are out of stock; **3,279 (≈87.9%)** are available.
+- **1,214 product names appear more than once**. The same product is listed in several pack sizes or variants, with up to **10 listings** for a single product (e.g., Quaker Oats).
+- **1 invalid record** had a selling price of ₹0 (*Cherry Blossom Liquid Shoe Polish*) and was removed, leaving **3,731 clean rows**.
+- Prices were stored in **paise** and converted to **rupees**.
 
-- Which categories generate the highest estimated revenue
-- Which categories give the deepest average discounts
-- High-priced products that are frequently out of stock (lost-sales risk)
-- Premium products (> ₹500) with very low discounts
-- Categories that hold the heaviest inventory by weight
+### 🏷️ Discounts & Pricing
+- The average discount across all products is **7.62%**, and the highest single discount is **51%**.
+- **Top 5 categories by average discount:**
+
+| Rank | Category | Avg. Discount |
+|---|---|---|
+| 1 | Fruits & Vegetables | **15.46%** |
+| 2 | Meats, Fish & Eggs | **11.03%** |
+| 3 | Packaged Food | 8.32% |
+| 4 | Ice Cream & Desserts | 8.32% |
+| 5 | Chocolates & Candies | 8.32% |
+
+- **Home & Cleaning** offers the lowest average discount (**5.70%**), followed by Paan Corner and Personal Care (6.25%).
+- The top discounted products are mostly **pasta, instant masalas, and gravy mixes** (Chef's Basket, Ceres Foods, Kitchens of India).
+- **38 premium products (MRP > ₹500) have a discount below 10%**. These are mostly **edible oil jars** (Dhara, Saffola, Fortune) and **Surf Excel detergent**, so high-value staples are rarely discounted heavily.
+
+### 📦 Stock & Inventory
+- Only **4 high-MRP products (MRP > ₹300) are out of stock**:
+  Patanjali Cow's Ghee (₹565), MamyPoko Pants Diapers XL (₹399), Aashirvaad Atta with Multigrains (₹315), and Everest Kashmiri Lal Chilli Powder (₹310). These are the highest revenue-risk items to restock first.
+- **Biscuits** has the highest out-of-stock rate (**≈28.6%**), followed by Dairy, Bread & Batter and Beverages (**≈21.7%**).
+- **Munchies** and **Cooking Essentials** hold the heaviest inventory (**≈1,405 kg each**). **Meats, Fish & Eggs** holds the lightest (**≈48 kg**).
+
+### 💰 Revenue Potential
+- The estimated total inventory revenue is **≈ ₹22.4 lakh** (selling price × available quantity).
+- **Munchies** and **Cooking Essentials** lead with **≈ ₹3.37 lakh each**, followed by **Personal Care** and **Paan Corner** (**≈ ₹2.71 lakh each**).
+- **Fruits & Vegetables** has the lowest estimated revenue (**≈ ₹10.8 thousand**), even though it offers the deepest discounts.
+
+### ⚖️ Value for Money & Pack Sizes
+- Fresh produce (onion, tomato, potato, lemon) gives the **best value per gram**, at roughly ₹0.00–0.05 per gram.
+- Personal care items such as **L'Oréal hair colour** are the most expensive per gram, at about **₹3.00 per gram**.
+- By weight, **3,605 products (≈96.6%) are "Low"** (≤ 1 kg), **122 are "Medium"** (1–6 kg), and only **4 are "Bulk"** (> 6 kg). Zepto's catalogue is dominated by small, convenience-sized packs.
 
 ---
 
